@@ -65,7 +65,8 @@ public class NextGreaterElement1 {
             }
             stack.push(nums2[i]);
         }
-
+        
+        // Element in the stack never found their next greatest element
         while (!stack.isEmpty()) {
             map.put(stack.pop(), -1);
         }

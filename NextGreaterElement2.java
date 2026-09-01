@@ -6,6 +6,8 @@ public class NextGreaterElement2 {
 
         int answer[] = Solution1(num2);
         System.out.println(Arrays.toString(answer));
+        int answer2[] = Solution2(num2);
+        System.out.println(Arrays.toString(answer2));
     }
 
     public static int[] Solution1(int[] nums) {
@@ -27,10 +29,27 @@ public class NextGreaterElement2 {
 
         return arr;
     }
-    
-    public static int[] Solution2(int[] nums) {
-        
-    }
 
+    public static int[] Solution2(int[] nums) {
+        int n = nums.length;
+        int[] ans = new int[n];
+        Arrays.fill(ans, -1);
+
+        Stack<Integer> stack = new Stack<>();
+
+        for (int i = 0; i < 2 * n; i++) {
+            int index = i % n;
+
+            while (!stack.isEmpty() && nums[stack.peek()] < nums[index]) {
+                ans[stack.pop()] = nums[index];
+            }
+
+            if (i < n) {
+                stack.push(index);
+            }
+        }
+
+        return ans;
+    }
 
 }
