@@ -1,0 +1,12 @@
+For Next Greater/Smaller Element problems:
+    Create an empty stack.
+    Traverse the array in the appropriate direction.
+    For the current element, compare it with the top of the stack.
+    While the stack contains elements that cannot be the answer, pop them.
+    After popping:
+     If stack is empty → answer is -1.
+     Otherwise → stack top is the answer.
+    Push the current element/index into the stack.
+    Continue until the array is finished.
+
+
